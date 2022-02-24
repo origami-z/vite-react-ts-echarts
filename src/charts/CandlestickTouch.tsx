@@ -35,7 +35,7 @@ const dataMA10 = calculateMA(10, data);
 const dataMA20 = calculateMA(20, data);
 
 // https://echarts.apache.org/examples/en/editor.html?c=candlestick-touch
-export const CandlestickTouch = () => {
+const CandlestickTouch = () => {
   const option: ReactEChartsProps["option"] = useMemo(
     () => ({
       animation: false,
@@ -274,3 +274,5 @@ export const CandlestickTouch = () => {
 
   return <ReactECharts option={option} style={{ height: 400 }} />;
 };
+
+export default CandlestickTouch;

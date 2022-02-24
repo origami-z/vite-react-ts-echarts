@@ -3,7 +3,7 @@ import { ReactECharts, ReactEChartsProps } from "../ReactEChartsFull";
 // import { ReactECharts, ReactEChartsProps } from './ReactECharts';
 
 // https://echarts.apache.org/examples/en/editor.html?c=pie-roseType-simple
-export const PieRoseType = () => {
+const PieRoseType = () => {
   const option: ReactEChartsProps["option"] = useMemo(
     () => ({
       legend: {
@@ -46,3 +46,5 @@ export const PieRoseType = () => {
 
   return <ReactECharts option={option} style={{ height: 400 }} />;
 };
+
+export default PieRoseType;

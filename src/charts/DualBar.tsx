@@ -2,7 +2,7 @@ import React, { useRef, useMemo } from "react";
 import { ReactECharts, ReactEChartsProps } from "../ReactEChartsFull";
 // import { ReactECharts, ReactEChartsProps } from './ReactECharts';
 
-export const DualBar = () => {
+const DualBar = () => {
   const option: ReactEChartsProps["option"] = useMemo(
     () => ({
       dataset: {
@@ -57,3 +57,4 @@ export const DualBar = () => {
 
   return <ReactECharts option={option} />;
 };
+export default DualBar;

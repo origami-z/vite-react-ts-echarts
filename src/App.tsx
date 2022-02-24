@@ -20,9 +20,19 @@ console.log("modules", modules, Object.keys(modules)[1]);
 const allKeys = Object.keys(modules);
 
 const App = () => {
-  const [random, setRandom] = useState(getRandomInt(0, allKeys.length));
+  const search = window.location.search.replaceAll("?", "");
+  const params = new URLSearchParams(search);
+  let defaultIndex = getRandomInt(0, allKeys.length);
+  if (params.get("index")) {
+    try {
+      defaultIndex = Number.parseInt(params.get("index")!);
+      console.log("Use index from URLSearchParams", defaultIndex);
+    } catch {}
+  }
+
+  const [random, setRandom] = useState(defaultIndex);
   const fileToLoad = allKeys[random];
-  const component = lazy(modules[fileToLoad]);
+  const component = lazy(modules[fileToLoad] as any);
 
   return (
     <div>
